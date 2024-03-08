@@ -102,3 +102,7 @@ a {
    animation: animate 5s infinite alternate;
   }
 }
+
+.done-link {
+  word-break: break-all;
+}
