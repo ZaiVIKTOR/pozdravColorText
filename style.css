@@ -81,3 +81,24 @@ a {
 .back-btn {
   margin-bottom: 30px;
 }
+
+@media(max-width: 700px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media(max-width: 420px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  h2 .text {
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0, 
+    0 0 15px #0f0, 
+    0 0 30px #0f0;
+
+   animation: animate 5s infinite alternate;
+  }
+}
