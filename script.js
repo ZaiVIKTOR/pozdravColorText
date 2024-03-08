@@ -11,11 +11,11 @@ if (!location.href.includes('?')) {
     document.querySelector('.container').innerHTML = templCreate;
     const btnCreate = document.querySelector('#create-link__btn');
     btnCreate.onclick = () => {
-        document.querySelector('.done-link').innerHTML = `${window.location.href}?text=${document.querySelector('input').value}`;
-        document.querySelector('.done-link').href = `${window.location.href}?text=${document.querySelector('input').value}`;
+        document.querySelector('.done-link').innerHTML = encodeURIComponent(`${window.location.href}?text=${document.querySelector('input').value}`);
+        document.querySelector('.done-link').href = encodeURIComponent(`${window.location.href}?text=${document.querySelector('input').value}`);
     }
     document.querySelector('#copy-link-btn').onclick = () => {
-        navigator.clipboard.writeText(`${window.location.href}?text=${document.querySelector('input').value}`).then(function() {
+        navigator.clipboard.writeText(encodeURIComponent(`${window.location.href}?text=${document.querySelector('input').value}`)).then(function() {
             console.log('Текст успешно скопирован в буфер обмена');
         }, function(err) {
             console.error('Произошла ошибка при копировании текста: ', err);
