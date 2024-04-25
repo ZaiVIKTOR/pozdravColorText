@@ -1,26 +1,12 @@
 const templCreate = `
-        <input class="input-pozdrav" type="text" placeholder="Введи текст поздравления">
-        <button id="create-link__btn" class="create-link-btn">Создать ссылку</button>
-        <a class="done-link" href="">Ссылка</a>
-
-        <button id="copy-link-btn" class="create-link-btn">Копировать ссылку</button>
+        
 `;
 
 
 if (!location.href.includes('?')) {
-    document.querySelector('.container').innerHTML = templCreate;
-    const btnCreate = document.querySelector('#create-link__btn');
-    btnCreate.onclick = () => {
-        document.querySelector('.done-link').innerHTML = `${window.location.href}?text=${encodeURIComponent(document.querySelector('input').value)}`;
-        document.querySelector('.done-link').href = `${window.location.href}?text=${encodeURIComponent(document.querySelector('input').value)}`;
-    }
-    document.querySelector('#copy-link-btn').onclick = () => {
-        navigator.clipboard.writeText(`${window.location.href}?text=${encodeURIComponent(document.querySelector('input').value)}`).then(function() {
-            console.log('Текст успешно скопирован в буфер обмена');
-        }, function(err) {
-            console.error('Произошла ошибка при копировании текста: ', err);
-        });
-    }
+    document.querySelector('.container').innerHTML = `
+        <h2>Давидос Хуесос</h2>
+    `;
 } else {
     document.querySelector('.container').innerHTML = `
         <button class="back-btn">Создать новую ссылку</button> 
